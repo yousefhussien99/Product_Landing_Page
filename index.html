@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Landing Page</title>
+    <link rel="stylesheet" type="text/css" href="CSS/Style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">Product Landing Page</h1>
+            <ul class="navlinks">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="dropdown">
+                <button class="dropbtn" onclick="Change_For_DropDown()"> <i class="fa-solid fa-bars"></i> <i class="fa-solid fa-xmark this"></i></button>
+                <div class="dropdown-content">
+                  <ul>
+                    <li><a href="#" class="active" onclick="Change_DropDown()">Home</a></li>
+                    <li><a href="#about" onclick="Change_DropDown()">About</a></li>
+                    <li><a href="#skills" onclick="Change_DropDown()">Skills</a></li>
+                    <li><a href="#education" onclick="Change_DropDown()">Education</a></li>
+                    <li><a href="#projects" onclick="Change_DropDown()">Projects</a></li>
+                    <li><a href="#services" onclick="Change_DropDown()">services</a></li>
+                    <li><a href="#contact" onclick="Change_DropDown()">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+        </nav>
+        <div class="content" >
+            <img src="IMG\6.png" alt="IMG" class="product-img">
+            <div class="product-info">
+                <h1 class="product-name">Wireless Headphone <span>Bluetooth</span></h1>
+                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi iusto aut inventore ipsam eligendi incidunt nihil beatae consequatur quae non.</p>
+                <p class="product-price">$99.99</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="color-variations">
+            <img src="IMG\1.png" alt="IMG" class="color-img1">
+            <img src="IMG\3.png" alt="IMG" class="color-img2">
+            <img src="IMG\4.png" alt="IMG" class="color-img3">
+            <img src="IMG\5.png" alt="IMG" class="color-img4">
+            <img src="IMG\6.png" alt="IMG" class="color-img5">
+        </div> 
+    </header>
+    <div class="footer">
+        <p>&copy; 2023 Product Landing Page. All Rights Reserved | Design by <a href="https://www.linkedin.com/in/%E2%80%AAyousef-hussien-680033262/">Yousef Hussien</a></p>
+    </div> 
+    </div>   
+</body>
+</html>
+<script>
+    const colorImg = document.querySelectorAll('.color-img');
+const productImg = document.querySelector('.product-img');
+const color = document.querySelector(':root');
+const img = document.getElementsByTagName('img');
+function Change_For_DropDown(){
+    var x = document.querySelector(".dropdown-content");
+    if(x.style.display === "block"){
+        x.style.display = "none";
+        change = document.querySelector(".fa-xmark");
+        change.style.display = "none";
+        pre = document.querySelector(".fa-bars");
+        pre.style.display = "block";
+    }
+    else{
+        x.style.display = "block";
+        change = document.querySelector(".fa-xmark");
+        change.style.display = "block";
+        pre = document.querySelector(".fa-bars");
+        pre.style.display = "none";
+    }
+}
+function Change_DropDown(){
+    var x = document.querySelector(".dropdown-content");
+    x.style.display = "none";
+}
+img[1].onclick = function(){
+    productImg.src = "IMG/1.png";
+    color.style.setProperty('--main-color', '#d1632b');
+}
+img[2].onclick = function(){
+    productImg.src = "IMG/3.png";
+    color.style.setProperty('--main-color', '#274c71');
+
+}
+img[3].onclick = function(){
+    productImg.src = "IMG/4.png";
+    color.style.setProperty('--main-color', '#76c16f');
+}
+img[4].onclick = function(){
+    productImg.src = "IMG/5.png";
+    color.style.setProperty('--main-color', '#b86bbd');
+
+}
+img[5].onclick = function(){
+    productImg.src = "IMG/6.png";
+    color.style.setProperty('--main-color', '#cb7c9a');
+
+}
+</script>
